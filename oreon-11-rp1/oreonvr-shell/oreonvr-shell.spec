@@ -1,5 +1,5 @@
 Name:           oreonvr-shell
-Version:        2026.10.05
+Version:        2026.10.06
 Release:        1%{?dist}
 Summary:        Oreon VR spatial shell with a headless Plasma desktop bridge
 License:        GPL-3.0-only AND OFL-1.1 AND Bitstream-Vera
@@ -94,5 +94,9 @@ OREONVR_NO_PTY=1 ./shell/oreonvr-shell --headless 640x400 --script 'wait 3; quit
 %config(noreplace) %{_sysconfdir}/oreonvr/desktop.conf
 
 %changelog
+* Tue Oct 06 2026 sk1lld <sk1lld@sk1lld.xyz> - 2026.10.06-1
+- Apps menu: pin apps to the top, show or hide Oreon VR and Linux apps
+- Desktop settings
+
 * Mon Oct 05 2026 sk1lld <sk1lld@sk1lld.xyz> - 2026.10.05-1
 - First package: the Oreon VR shell for Oreon 11 (KDE Plasma desktop bridge on KWin)
