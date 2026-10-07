@@ -1,5 +1,5 @@
 Name:           oreonvr-shell
-Version:        2026.10.06
+Version:        2026.10.07
 Release:        1%{?dist}
 Summary:        Oreon VR spatial shell with a headless Plasma desktop bridge
 License:        GPL-3.0-only AND OFL-1.1 AND Bitstream-Vera
@@ -19,6 +19,12 @@ BuildRequires:  plasma-wayland-protocols
 BuildRequires:  glib2-devel
 BuildRequires:  gdk-pixbuf2-devel
 BuildRequires:  pipewire-devel
+BuildRequires:  pkgconfig(libavformat)
+BuildRequires:  pkgconfig(libavcodec)
+BuildRequires:  pkgconfig(libswscale)
+BuildRequires:  pkgconfig(libswresample)
+BuildRequires:  pkgconfig(libavutil)
+BuildRequires:  pkgconfig(hunspell)
 
 Requires:       /usr/bin/kwin_wayland
 Requires:       /usr/bin/plasmashell
@@ -33,6 +39,8 @@ Requires:       /usr/bin/lsblk
 Requires:       /usr/bin/runuser
 Requires:       /usr/bin/rsync
 Requires:       /usr/bin/python3
+Requires:       /usr/bin/pw-cat
+Requires:       hunspell-en-US
 Recommends:     centrio-installer
 Recommends:     python3-pyside6
 Recommends:     xdg-utils
@@ -94,6 +102,11 @@ OREONVR_NO_PTY=1 ./shell/oreonvr-shell --headless 640x400 --script 'wait 3; quit
 %config(noreplace) %{_sysconfdir}/oreonvr/desktop.conf
 
 %changelog
+* Wed Oct 07 2026 sk1lld <sk1lld@sk1lld.xyz> - 2026.10.07-1
+- Videos app: 2D and 3D video playback (FFmpeg), audio through PipeWire
+- Tabbed terminal, keyboard improvements
+- Office spell-check (hunspell)
+
 * Tue Oct 06 2026 sk1lld <sk1lld@sk1lld.xyz> - 2026.10.06-1
 - Apps menu: pin apps to the top, show or hide Oreon VR and Linux apps
 - Desktop settings
