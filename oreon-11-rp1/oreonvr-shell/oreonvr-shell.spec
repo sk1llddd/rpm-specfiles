@@ -40,10 +40,20 @@ Requires:       /usr/bin/runuser
 Requires:       /usr/bin/rsync
 Requires:       /usr/bin/python3
 Requires:       /usr/bin/pw-cat
+Requires:       /usr/bin/djpeg
+Requires:       /usr/bin/udevadm
+Requires:       /usr/bin/xdg-open
 Requires:       hunspell-en-US
+Requires:       plasma-desktop
+Requires:       qt6-qtwayland
+Requires:       mesa-dri-drivers
+Requires:       mesa-libEGL
+Requires:       mesa-libgbm
+Requires:       python3-pyside6
 Recommends:     centrio-installer
-Recommends:     python3-pyside6
-Recommends:     xdg-utils
+Recommends:     plasma-systemsettings
+Recommends:     dolphin
+Recommends:     konsole
 
 %description
 Oreon VR is a spatial shell for Oreon 11. It drives the screen (or a headset)
@@ -106,6 +116,7 @@ OREONVR_NO_PTY=1 ./shell/oreonvr-shell --headless 640x400 --script 'wait 3; quit
 - Videos app: 2D and 3D video playback (FFmpeg), audio through PipeWire
 - Tabbed terminal, keyboard improvements
 - Office spell-check (hunspell)
+- Require everything the Oreon VR image installs for the shell (JPEG decoding, Mesa, Plasma, xdg-utils, PySide6)
 
 * Tue Oct 06 2026 sk1lld <sk1lld@sk1lld.xyz> - 2026.10.06-1
 - Apps menu: pin apps to the top, show or hide Oreon VR and Linux apps
